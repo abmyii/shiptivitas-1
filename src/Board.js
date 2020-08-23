@@ -75,4 +75,7 @@ export default class Board extends React.Component {
       </div>
     );
   }
+  componentDidMount() {
+      Dragula([this.swimlanes.backlog.current, this.swimlanes.inProgress.current, this.swimlanes.complete.current])
+  }
 }
