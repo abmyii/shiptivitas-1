@@ -5,17 +5,17 @@
   margin-bottom: 10px;
 }
 
-.Card-grey {
+.Swimlane-column.grey .Card {
   background-color: rgba(167, 158, 158, 0.671);
   color: black;
 }
 
-.Card-blue {
+.Swimlane-column.blue .Card {
   background-color: skyblue;
   color: white;
 }
 
-.Card-green {
+.Swimlane-column.green .Card {
   background-color: rgb(150, 190, 150);
   color: white;
 }

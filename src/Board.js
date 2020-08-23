@@ -50,9 +50,9 @@ export default class Board extends React.Component {
       status: companyDetails[3],
     }));
   }
-  renderSwimlane(name, clients, ref) {
+  renderSwimlane(name, clients, ref, cardColour) {
     return (
-      <Swimlane name={name} clients={clients} dragulaRef={ref}/>
+      <Swimlane name={name} clients={clients} dragulaRef={ref} cardColour={cardColour}/>
     );
   }
 
@@ -62,13 +62,13 @@ export default class Board extends React.Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4">
-              {this.renderSwimlane('Backlog', this.state.clients.backlog, this.swimlanes.backlog)}
+              {this.renderSwimlane('Backlog', this.state.clients.backlog, this.swimlanes.backlog, "grey")}
             </div>
             <div className="col-md-4">
-              {this.renderSwimlane('In Progress', this.state.clients.inProgress, this.swimlanes.inProgress)}
+              {this.renderSwimlane('In Progress', this.state.clients.inProgress, this.swimlanes.inProgress, "blue")}
             </div>
             <div className="col-md-4">
-              {this.renderSwimlane('Complete', this.state.clients.complete, this.swimlanes.complete)}
+              {this.renderSwimlane('Complete', this.state.clients.complete, this.swimlanes.complete, "green")}
             </div>
           </div>
         </div>
@@ -76,6 +76,6 @@ export default class Board extends React.Component {
     );
   }
   componentDidMount() {
-      Dragula([this.swimlanes.backlog.current, this.swimlanes.inProgress.current, this.swimlanes.complete.current])
+    Dragula([this.swimlanes.backlog.current, this.swimlanes.inProgress.current, this.swimlanes.complete.current])
   }
 }
